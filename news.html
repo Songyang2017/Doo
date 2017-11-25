@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>news</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<script>
+    var newsUrl="http://v.juhe.cn/toutiao/index?type=&key=cfe88a732a8af2dd2cfb88645d266792";
+    $.post("php/new.php",{newsUrl},function(data){
+    	var de=JSON.parse(data);
+    	console.log(de);
+    })
+</script>
+</body>
+</html>
