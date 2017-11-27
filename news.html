@@ -8,12 +8,29 @@
     <title>news</title>
 </head>
 <body>
+	<div id="app">
+		<ul>
+			<li v-for="x in msg.result.data">{{x.title}} <br><img :src="x.thumbnail_pic_s" alt="">
+			<img :src="x.thumbnail_pic_s02" alt=""><img :src="x.thumbnail_pic_s03" alt=""></li>
+		</ul>
+	</div>
+
 <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
+	var info=[];
     var newsUrl="http://v.juhe.cn/toutiao/index?type=&key=cfe88a732a8af2dd2cfb88645d266792";
     $.post("php/new.php",{newsUrl},function(data){
     	var de=JSON.parse(data);
-    	console.log(de);
+//    	console.log(de);
+    	info=de;
+    	console.log(info);
+	    var app=new Vue({
+	    	el:"#app",
+	    	data:{
+	    		msg:info
+	    	}
+	    })
     })
 </script>
 </body>
