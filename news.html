@@ -22,7 +22,7 @@
     var newsUrl="http://v.juhe.cn/toutiao/index?type=&key=cfe88a732a8af2dd2cfb88645d266792";
     $.post("php/new.php",{newsUrl},function(data){
     	var de=JSON.parse(data);
-//    	console.log(de);
+    	console.log(de);
     	info=de;
     	console.log(info);
 	    var app=new Vue({

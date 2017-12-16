@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>news2</title>
+</head>
+<body>
+<div id="app">
+    <!--<ul>-->
+        <li v-for="x in msg.data">{{x.abstract}} <!--<br><img :src="x.thumbnail_pic_s" alt="">
+            <img :src="x.thumbnail_pic_s02" alt=""><img :src="x.thumbnail_pic_s03" alt=""></li>-->
+    <!--</ul>-->
+</div>
+
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+    var info=[];
+    var newsUrl="https://m.toutiao.com/list/?tag=__all__&ac=wap&count=20&format=json_raw&as=A1658AE3F5226F7&cp=5A3552A65FC73E1&max_behot_time=1513432695";
+    $.post("php/new.php",{newsUrl},function(data){
+        var de=JSON.parse(data);
+        console.log(de);
+        info=de;
+        console.log(info);
+        var app=new Vue({
+            el:"#app",
+            data:{
+                msg:info
+            }
+        })
+    })
+</script>
+</body>
+</html>
