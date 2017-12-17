@@ -19,8 +19,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 	var info=[];
-    var newsUrl="http://v.juhe.cn/toutiao/index?type=&key=cfe88a732a8af2dd2cfb88645d266792";
-    $.post("php/new.php",{newsUrl},function(data){
+    var newsUrl="https://v.juhe.cn/toutiao/index?type=&key=cfe88a732a8af2dd2cfb88645d266792";
+    $.get("php/new.php",{newsUrl},function(data){
     	var de=JSON.parse(data);
     	console.log(de);
     	info=de;

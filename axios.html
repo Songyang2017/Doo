@@ -17,24 +17,20 @@
 
 <!--<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.js"></script>
 <script>
     var info=[];
     var newsUrl="http://v.juhe.cn/toutiao/index?type=&key=cfe88a732a8af2dd2cfb88645d266792";
 
+
+
+
+
+
     var app=new Vue({
         el:"#app",
         mounted:function(){
-            axios(newsUrl,{
-                proxy: {
-                    host: '192.168.2.134',
-                    port: 80,
-                    auth: {
-                        username: 'mikeymike',
-                        password: 'rapunz3l'
-                    }
-        },
-            })
+//
         },
         data:{
             msg:info
